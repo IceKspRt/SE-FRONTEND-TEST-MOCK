@@ -11,7 +11,31 @@
 
 <!-- Coding JavaScript 2.1 here!!!! -->
 
+<script>
+	$('#btn2_1').click(function(){
+		ChangeTel();
+	});
 
+	function ChangeTel(){  
+		const telShow = document.getElementById("ans1");
+		const telHide = document.getElementById("str1");
+		if(telHide.textContent == "xxx-xxxxxxx"){
+			telHide.textContent = telShow.textContent;
+		}else if(telHide.textContent == "088-9999999"){
+			telHide.textContent = "xxx-xxxxxxx";
+		}
+	}
+	// telHide.style.display = "block";
+	// function hideShowTel(){
+	// 	if(telHide.style.display == "block"){
+	// 		telHide.style.display = "none";
+	// 		telShow.style.display = "block";
+	// 	}else if(telShow.style.display == "block"){
+	// 		telShow.style.display = "none";
+	// 		telHide.style.display = "block";
+	// 	}
+	// }
+</script>
 
 <!-- Coding JavaScript 2.1 here!!!! -->
 <hr>
@@ -26,7 +50,20 @@
 
 <!-- Coding JavaScript 2.2 here!!!! -->
 
-
+<script>
+	$('#btn2_2').click(function(){
+		dateNow();	
+	})
+	function dateNow(){
+		const date = new Date;
+		const currentDate = document.getElementById("str2");
+		currentDate.textContent ="วันที่ " + date.toLocaleDateString('th-TH',{
+			year: "numeric",
+			month: "long",
+			day: "numeric"
+		})
+	}
+</script>
 
 <!-- Coding JavaScript 2.2 here!!!! -->
 <hr>
@@ -46,7 +83,11 @@
 
 <!-- Coding JavaScript 2.3 here!!!! -->
 
-
+<script>
+	function javascript_lev2_3(){
+		$('#ans3').slideToggle('slow');
+	}
+</script>
 
 <!-- Coding JavaScript 2.3 here!!!! -->
 <hr>
@@ -62,7 +103,15 @@
 
 <!-- Coding JavaScript 2.4 here!!!! -->
 
-
+<script>
+	function javascript_lev2_4(){
+		if($('#ans4').is(':checked')){
+			alert("คุณเลือก" + $('#ans4').val());
+		}else{
+			alert("คุณไม่ได้เลือก" + $('#ans4').val())
+		}
+	}
+</script>
 
 <!-- Coding JavaScript 2.4 here!!!! -->
 <hr>
