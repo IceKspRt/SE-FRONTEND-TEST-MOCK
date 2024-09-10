@@ -12,19 +12,35 @@
 <!-- Coding JavaScript 2.1 here!!!! -->
 
 <script>
-	$('#btn2_1').click(function(){
+	$(document).ready(() => {
+		const Show = document.getElementById("ans1").innerHTML
+		const Hide = document.getElementById("str1").innerHTML
+		let isShow = false;
+		$('#btn2_1').click(() => {
+			if (isShow) {
+				$('#str1').text(Hide);
+				isShow = false;
+			} else {
+				$('#str1').text(Show);
+				isShow = true;
+			}
+		})
+	});
+	
+	$('#btn2_1').click(function () {
 		ChangeTel();
 	});
 
-	function ChangeTel(){  
+	function ChangeTel() {
 		const telShow = document.getElementById("ans1");
 		const telHide = document.getElementById("str1");
-		if(telHide.textContent == "xxx-xxxxxxx"){
+		if (telHide.textContent == "xxx-xxxxxxx") {
 			telHide.textContent = telShow.textContent;
-		}else if(telHide.textContent == "088-9999999"){
+		} else if (telHide.textContent == "088-9999999") {
 			telHide.textContent = "xxx-xxxxxxx";
 		}
 	}
+
 	// telHide.style.display = "block";
 	// function hideShowTel(){
 	// 	if(telHide.style.display == "block"){
@@ -51,13 +67,14 @@
 <!-- Coding JavaScript 2.2 here!!!! -->
 
 <script>
-	$('#btn2_2').click(function(){
-		dateNow();	
+	$('#btn2_2').click(function () {
+		dateNow();
 	})
-	function dateNow(){
+
+	function dateNow() {
 		const date = new Date;
 		const currentDate = document.getElementById("str2");
-		currentDate.textContent ="วันที่ " + date.toLocaleDateString('th-TH',{
+		currentDate.textContent = "วันที่ " + date.toLocaleDateString('th-TH', {
 			year: "numeric",
 			month: "long",
 			day: "numeric"
@@ -84,8 +101,8 @@
 <!-- Coding JavaScript 2.3 here!!!! -->
 
 <script>
-	function javascript_lev2_3(){
-		$('#ans3').slideToggle('slow');
+	function javascript_lev2_3() {
+		$('#ans3').slideToggle('fast');
 	}
 </script>
 
@@ -104,10 +121,10 @@
 <!-- Coding JavaScript 2.4 here!!!! -->
 
 <script>
-	function javascript_lev2_4(){
-		if($('#ans4').is(':checked')){
-			alert("คุณเลือก" + $('#ans4').val());
-		}else{
+	function javascript_lev2_4() {
+		if ($('#ans4').is(':checked')) {
+			alert("คุณเลือก" + $('#ans4').val())
+		} else {
 			alert("คุณไม่ได้เลือก" + $('#ans4').val())
 		}
 	}
@@ -115,3 +132,7 @@
 
 <!-- Coding JavaScript 2.4 here!!!! -->
 <hr>
+
+
+<button class="btn btn-primary" id="btn2_1">คลิกที่นี่ JS 2.1</button>
+<p id="str1" name="str1">xxx-xxxxxxx</p>
